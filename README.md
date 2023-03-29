@@ -1,9 +1,11 @@
 # react-calculator
 
 This is a TypeScript-based calculator app built with React and AWS Amplify. The app uses a GraphQL API and a Cognito userpool for authentication.
+[Live version on Amplify](https://master.d24sr9e1xdl2rt.amplifyapp.com/)
 
 ## Installation
 
+> The following commands will be most accurate for use in the powershell terminal.
 To install the app, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/me/reactcalculator.git` or
@@ -25,8 +27,7 @@ To set up AWS Amplify integration, [install the Amplify CLI](https://docs.amplif
 7. Configure the [Authenticator](@aws-amplify/ui-react) component to only trigger on certain actions.
 8. Configure the API to sync local and cloud data. If you encounter this [known issue](https://github.com/aws-amplify/amplify-js/issues/4257), you can resolve it by following [these steps](https://github.com/aws-amplify/amplify-js/issues/4257#issuecomment-622288820)
 
-
-## Usage
+## Usage 
 
 To run the app locally, use the following command:
 
@@ -38,31 +39,29 @@ To build the app, use the following command:
 
 ## Testing
 
-Write tests using [Jest for TypeScript](@types/jest).
-
+- Write tests using [Jest for TypeScript](@types/jest).
+- Set up [WebDriver](https://www.selenium.dev/documentation/webdriver/)
 To run tests, use the following command:
 
 `npm test`
 
+## Deploying React Frontend with Amplify
+1. From your project directory, run `amplify console` and select **AWS Console**, or
+    Navigate to the **Amplify Console** in the AWS Management Console.
+2. From the app dashboard, select **Hosting Environments**
+3. Choose **GitHub** as the Repository service provider and click on the **Connect branch** button.
+4. **Authorize** Amplify Console to access your GitHub account, and select the repository containing your frontend code.
+5. Click on the Branch dropdown and select the branch you want to deploy.
+6. Under the Build settings
+ - Choose Continuous deployment to enable automatic deployments.
+ - Choose the existing environment and App type.
+ - Select a service role, you might have to create a new one
+7. Click on the Save and deploy button to deploy your app.
+
 ## Dockerfile
 
-To build a Docker image of the app, create a file named "Dockerfile" in the root directory with the following contents:
-
-```
-FROM node:16-alpine
-
-WORKDIR /app
-
-COPY . .
-
-RUN npm install --production
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
-```
-
-Then, run the following command to build the Docker image:
+To build a Docker image of the app
+Run the following command to build the Docker image:
 
 ```powershell
 $version=1.0.0
@@ -92,6 +91,10 @@ Please make sure to adhere to the following guidelines:
 - Write tests for new features and ensure that existing tests pass.
 - Use clear and descriptive commit messages.
 - Ensure that your code is well-documented.
+
+## Frequently Asked Questions (FAQ)
+
+1. [npm install vs npm ci](https://stackoverflow.com/questions/52499617/what-is-the-difference-between-npm-install-and-npm-ci)
 
 ## Contact
 

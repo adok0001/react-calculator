@@ -16,7 +16,7 @@ The React Calculator is a web-based calculator designed to provide users with ba
 
 ## Design Considerations
 
-**Assumptions and Dependencies:** The calculator will depend on a modern web browser with JavaScript support. The calculator will be built using [React](https://react.dev/) and its libraries and deployed using [AWS Amplify](https://aws.amazon.com/amplify/). The calculator will follow the order of operations (BODMAS) and store user data in a database.
+**Assumptions and Dependencies:** The calculator will depend on a modern web browser with JavaScript support. The calculator will be built using [React](https://react.dev/) and its libraries and deployed using [AWS Amplify](https://aws.amazon.com/amplify/) which requires an AWS account. The calculator will follow the order of operations (BODMAS) and store user data in a database. The application is built on Windows and the commands will be for powershell terminal.
 
 **General Constraints:** The calculator should be designed with accessibility in mind to ensure it can be used by all users and responsive to different screen sizes and devices. It should also be able to handle errors and edge cases gracefully.
 

@@ -133,10 +133,17 @@ export const CalculatorEngine = () => {
       const token = stack[i];
   
       if (token === "v") {
-        const root = Number(result.pop());
-        const radicand = Number(stack[i + 1]);
+        const root = result.length > 0 ? Number(result.pop()) : 2;
+        let radicandStr = "";
+        i++;
+  
+        while (i < stack.length && /^[\d.]+$/.test(stack[i].toString())) {
+          radicandStr += stack[i];
+          i++;
+        }
+  
+        const radicand = Number(radicandStr);
         result.push(Math.pow(radicand, 1 / root));
-        i += 2;
       } else {
         result.push(token);
         i++;
@@ -145,6 +152,7 @@ export const CalculatorEngine = () => {
   
     return result;
   }
+  
   
 
   //function takes an input string and converts it into an array of tokens by checking for digits, operators, brackets, and percentages.

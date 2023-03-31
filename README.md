@@ -1,7 +1,8 @@
 # react-calculator
 
 This is a TypeScript-based calculator app built with React and AWS Amplify. The app uses a GraphQL API and a Cognito userpool for authentication.
-[Live version on Amplify](https://master.d24sr9e1xdl2rt.amplifyapp.com/)
+
+Here's my [live version](https://master.d24sr9e1xdl2rt.amplifyapp.com/) on Amplify
 
 ## Installation
 
@@ -24,10 +25,12 @@ To set up AWS Amplify integration, [install the Amplify CLI](https://docs.amplif
 4. Run `amplify add api` to add a GraphQL API and schema with rules to only allow users access to their own history.
 5. Run `amplify update api` and configure the API to use Cognito userpool as the authentication mode.
 6. Run `amplify push` to deploy the backend configuration to the cloud.
-7. Configure the [Authenticator](@aws-amplify/ui-react) component to only trigger on certain actions.
-8. Configure the API to sync local and cloud data. If you encounter this [known issue](https://github.com/aws-amplify/amplify-js/issues/4257), you can resolve it by following [these steps](https://github.com/aws-amplify/amplify-js/issues/4257#issuecomment-622288820)
+7. Configure the [Authenticator](https://github.com/aws-amplify/amplify-ui#readme) component to only trigger on certain actions. 
+If you encounter this [known issue](https://github.com/aws-amplify/amplify-js/issues/4257), you can resolve it by following [these steps](https://github.com/aws-amplify/amplify-js/issues/4257#issuecomment-622288820)
+8. Configure the API to sync local and cloud data. 
 
-## Usage 
+
+## Usage
 
 To run the app locally, use the following command:
 
@@ -39,8 +42,9 @@ To build the app, use the following command:
 
 ## Testing
 
-- Write tests using [Jest for TypeScript](@types/jest).
-- Set up [WebDriver](https://www.selenium.dev/documentation/webdriver/)
+ - Set up [WebDriver](https://www.selenium.dev/documentation/webdriver/)
+ - Write tests using [Jest for TypeScript](https://www.npmjs.com/package/@types/jest).
+
 To run tests, use the following command:
 
 `npm test`
@@ -71,7 +75,7 @@ docker build -t react-calculator:$version .
 And to run and bind to port 3000:
 
 `docker run -p 3000:3000 react-calculator`
- And  access it on http://your-network:80
+ And  access it on http://your-network:3000
 
 ## Contributing
 
